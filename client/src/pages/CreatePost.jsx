@@ -20,7 +20,7 @@ export const CreatePost = () => {
       try {
         setGeneratingImg(true);
         const response = await fetch(
-          'https://dall-e-ihsz.onrender.com/api/v1/dalle',
+          'https://dall-e-backend.herokuapp.com/api/v1/dalle',
           {
             method: 'POST',
             headers: {
@@ -52,7 +52,7 @@ export const CreatePost = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          'https://dall-e-ihsz.onrender.com/api/v1/post',
+          'https://dall-e-backend.herokuapp.com/api/v1/post',
           {
             method: 'POST',
             headers: {

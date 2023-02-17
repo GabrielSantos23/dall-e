@@ -18,11 +18,13 @@ app.get('/', async (req, res) => {
   res.send('hello world');
 });
 
-const port = 8080;
+const port = process.env.PORT || 8080;
 const startServer = async () => {
   try {
     connectDb(process.env.MONGODB_URL);
-    app.listen(port, () => console.log(`listening on port ${port} `));
+    app.listen(process.env.PORT || 8080, () =>
+      console.log(`listening on port ${port} `)
+    );
   } catch (error) {
     console.log(error);
   }
